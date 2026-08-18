@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Bites Restaurant | Best Quality Food</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        restdark: '#111111',
+                        restcard: '#1a1a1a',
+                        restyellow: '#f5b041',
+                        restyellowhover: '#d4ac0d'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #111111;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Textured dark background mimicking the reference image */
+        .stone-texture {
+            background: #111111 radial-gradient(circle at 70% 50%, rgba(30, 30, 30, 0.8) 0%, rgba(10, 10, 10, 0.95) 70%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-restyellow selection:text-black">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#111111]/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Logo matching reference style -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-full bg-restyellow flex items-center justify-center text-black font-black text-xl shadow-lg">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                    <span class="text-sm font-black tracking-widest text-white block uppercase">RESTFOOD</span>
+                    <span class="text-[9px] text-restyellow font-bold tracking-widest uppercase">RESTAURANT</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-10 text-xs font-bold tracking-widest text-stone-300 uppercase">
+                <a href="#home" class="hover:text-restyellow transition-colors">Home</a>
+                <a href="#about" class="hover:text-restyellow transition-colors">About Us</a>
+                <a href="#chefs" class="hover:text-restyellow transition-colors">Chefs</a>
+                <a href="#menu" class="hover:text-restyellow transition-colors">Menu</a>
+                <a href="#gallery" class="hover:text-restyellow transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-restyellow transition-colors">Contacts</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative bg-[#1a1a1a] border border-white/10 p-2.5 rounded-full text-stone-200 hover:border-restyellow transition-all">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-restyellow text-black text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                </button>
+                <a href="#reservation" class="hidden sm:inline-flex bg-restyellow hover:bg-restyellowhover text-black text-xs font-black px-6 py-3 rounded uppercase tracking-wider transition-all shadow-md">
+                    Book a Table
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Mimicking exact reference image layout) -->
+    <section id="home" class="relative pt-32 pb-24 md:pt-44 md:pb-36 stone-texture overflow-hidden border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-7 space-y-6">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight uppercase leading-[1.05]">
+                    Best Quality <span class="text-white">Food</span>
+                </h1>
+                <p class="text-stone-400 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias provident laborum, recusandae delectus corrupti reprehenderit error distinctio eligendi qui consequuntur officia.
+                </p>
+                <div class="pt-4">
+                    <a href="#reservation" class="inline-block bg-restyellow hover:bg-restyellowhover text-black text-xs font-black px-8 py-4 rounded uppercase tracking-widest shadow-xl transition-all transform hover:-translate-y-0.5">
+                        Book a Table
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Food Image Composition matching the reference photo -->
+            <div class="lg:col-span-5 relative flex justify-center items-center">
+                <div class="relative w-full max-w-md space-y-4">
+                    <!-- Top plate: Steaks & Salad -->
+                    <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center space-x-4 transform hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" alt="Grilled Steak" class="w-24 h-24 object-cover rounded-xl border border-white/10">
+                        <div>
+                            <span class="text-restyellow text-xs font-bold uppercase tracking-wider">Chef Special</span>
+                            <h3 class="text-white font-bold text-base mt-0.5">Grilled Ribeye & Greens</h3>
+                            <p class="text-stone-400 text-xs mt-1">Served with organic basil and fresh tomatoes.</p>
+                        </div>
+                    </div>
+                    <!-- Bottom plate: Wood Fired Pizza -->
+                    <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center space-x-4 transform hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Wood Fired Pizza" class="w-24 h-24 object-cover rounded-xl border border-white/10">
+                        <div>
+                            <span class="text-restyellow text-xs font-bold uppercase tracking-wider">Wood Fired</span>
+                            <h3 class="text-white font-bold text-base mt-0.5">Classic Margherita</h3>
+                            <p class="text-stone-400 text-xs mt-1">Fresh basil, mozzarella, San Marzano sauce.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-xs font-black tracking-widest text-restyellow uppercase">About Our Restaurant</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Tradition & Passion in Every Single Dish</h2>
+                <p class="text-stone-300 text-sm leading-relaxed">
+                    Founded in downtown Chicago, Urban Bites brings together traditional culinary expertise and modern American dining culture. Our chefs carefully select organic local produce to craft memorable experiences.
+                </p>
+                <div class="grid grid-cols-3 gap-4 pt-4">
+                    <div class="bg-[#1a1a1a] p-4 rounded border border-white/10 text-center">
+                        <span class="block text-2xl font-black text-restyellow">15+</span>
+                        <span class="text-[10px] text-stone-400 font-bold uppercase">Master Chefs</span>
+                    </div>
+                    <div class="bg-[#1a1a1a] p-4 rounded border border-white/10 text-center">
+                        <span class="block text-2xl font-black text-restyellow">100%</span>
+                        <span class="text-[10px] text-stone-400 font-bold uppercase">Organic Food</span>
+                    </div>
+                    <div class="bg-[#1a1a1a] p-4 rounded border border-white/10 text-center">
+                        <span class="block text-2xl font-black text-restyellow">4.9★</span>
+                        <span class="text-[10px] text-stone-400 font-bold uppercase">Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Restaurant Interior" class="rounded-xl border border-white/10 h-64 w-full object-cover">
+                <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=600&q=80" alt="Chef Preparing Food" class="rounded-xl border border-white/10 h-64 w-full object-cover mt-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- CHEFS SECTION -->
+    <section id="chefs" class="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-black tracking-widest text-restyellow uppercase mb-2 block">Professional Team</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Meet Our Expert Chefs</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden group">
+                <div class="h-72 bg-stone-800 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Head Chef" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-white font-bold text-lg">Chef Robert Vance</h3>
+                    <p class="text-restyellow text-xs font-bold uppercase tracking-wider mt-1">Executive Head Chef</p>
+                </div>
+            </div>
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden group">
+                <div class="h-72 bg-stone-800 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80" alt="Sous Chef" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-white font-bold text-lg">Elena Rostova</h3>
+                    <p class="text-restyellow text-xs font-bold uppercase tracking-wider mt-1">Pastry Specialist</p>
+                </div>
+            </div>
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden group">
+                <div class="h-72 bg-stone-800 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Grill Master" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-white font-bold text-lg">Marcus Sterling</h3>
+                    <p class="text-restyellow text-xs font-bold uppercase tracking-wider mt-1">Grill & Meat Master</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU & PRICES SECTION -->
+    <section id="menu" class="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-black tracking-widest text-restyellow uppercase mb-2 block">Delicious Selection</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Menu & Pricing</h2>
+            <p class="text-stone-400 text-sm mt-2">Prepared fresh upon order. High quality ingredients guaranteed.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Item 1 -->
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-restyellow/50 transition-all">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger" class="w-full h-48 object-cover rounded-xl mb-4 border border-white/10">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-white font-bold text-base">The Truffle Smash Burger</h3>
+                        <span class="text-restyellow font-black text-lg">$16.50</span>
+                    </div>
+                    <p class="text-stone-400 text-xs leading-relaxed mb-4">Two smashed Angus beef patties, aged white cheddar, caramelized onions, signature truffle aioli.</p>
+                </div>
+                <button onclick="addToCart('The Truffle Smash Burger', 16.50)" class="w-full bg-restyellow hover:bg-restyellowhover text-black text-xs font-black py-3 rounded uppercase tracking-wider transition-all">
+                    Add to Order
+                </button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-restyellow/50 transition-all">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza" class="w-full h-48 object-cover rounded-xl mb-4 border border-white/10">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-white font-bold text-base">Wood-Fired Margherita Pizza</h3>
+                        <span class="text-restyellow font-black text-lg">$18.00</span>
+                    </div>
+                    <p class="text-stone-400 text-xs leading-relaxed mb-4">San Marzano tomato sauce, fresh Fior di Latte mozzarella, organic basil leaves and extra virgin olive oil.</p>
+                </div>
+                <button onclick="addToCart('Wood-Fired Margherita Pizza', 18.00)" class="w-full bg-restyellow hover:bg-restyellowhover text-black text-xs font-black py-3 rounded uppercase tracking-wider transition-all">
+                    Add to Order
+                </button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-restyellow/50 transition-all">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Steak" class="w-full h-48 object-cover rounded-xl mb-4 border border-white/10">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-white font-bold text-base">Prime Ribeye Steak</h3>
+                        <span class="text-restyellow font-black text-lg">$32.00</span>
+                    </div>
+                    <p class="text-stone-400 text-xs leading-relaxed mb-4">12oz dry-aged prime cut grilled over open flame, served with herb butter and roasted garlic potatoes.</p>
+                </div>
+                <button onclick="addToCart('Prime Ribeye Steak', 32.00)" class="w-full bg-restyellow hover:bg-restyellowhover text-black text-xs font-black py-3 rounded uppercase tracking-wider transition-all">
+                    Add to Order
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONLINE RESERVATION SECTION -->
+    <section id="reservation" class="py-24 max-w-4xl mx-auto px-6 border-b border-white/10">
+        <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="text-xs font-black tracking-widest text-restyellow uppercase mb-2 block">Table Booking</span>
+                <h2 class="text-3xl font-black text-white uppercase">Online Reservation</h2>
+                <p class="text-stone-400 text-xs mt-2">Instant SMS confirmation guaranteed for your dining experience.</p>
+            </div>
+
+            <form id="reservationForm" onsubmit="handleReservation(event)" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">Full Name</label>
+                        <input type="text" id="resName" required placeholder="John Doe" class="w-full bg-[#111111] border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-restyellow">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">Phone Number</label>
+                        <input type="tel" id="resPhone" required placeholder="(312) 555-0198" class="w-full bg-[#111111] border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-restyellow">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">Date</label>
+                        <input type="date" id="resDate" required class="w-full bg-[#111111] border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-restyellow">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">Time Slot</label>
+                        <select id="resTime" class="w-full bg-[#111111] border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-restyellow">
+                            <option>5:00 PM</option>
+                            <option>6:00 PM</option>
+                            <option selected>7:00 PM (Prime)</option>
+                            <option>8:00 PM</option>
+                            <option>9:00 PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">Guests</label>
+                        <select id="resGuests" class="w-full bg-[#111111] border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-restyellow">
+                            <option>1 Person</option>
+                            <option>2 People</option>
+                            <option selected>4 People</option>
+                            <option>6 People</option>
+                            <option>8+ People</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-restyellow hover:bg-restyellowhover text-black font-black py-4 rounded uppercase tracking-widest text-xs transition-all shadow-lg">
+                    Confirm Table Reservation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-black tracking-widest text-restyellow uppercase mb-2 block">Visual Feast</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Restaurant Gallery</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="h-64 rounded-xl overflow-hidden border border-white/10 group">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="h-64 rounded-xl overflow-hidden border border-white/10 group">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="h-64 rounded-xl overflow-hidden border border-white/10 group">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="h-64 rounded-xl overflow-hidden border border-white/10 group">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-black tracking-widest text-restyellow uppercase mb-2 block">Testimonials</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">What Diners Say</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8">
+                <div class="flex text-restyellow space-x-1 mb-4 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-stone-300 text-sm leading-relaxed mb-6">"The absolute best quality food and burger in Chicago. Impeccable service and amazing dark atmosphere!"</p>
+                <h4 class="text-white font-bold text-sm">Michael Roberts</h4>
+                <span class="text-stone-500 text-xs">Google Local Guide</span>
+            </div>
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8">
+                <div class="flex text-restyellow space-x-1 mb-4 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-stone-300 text-sm leading-relaxed mb-6">"Incredible wood-fired pizzas with authentic crust. Will definitely return with friends soon."</p>
+                <h4 class="text-white font-bold text-sm">Jessica Smith</h4>
+                <span class="text-stone-500 text-xs">Food Critic, Chicago</span>
+            </div>
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8">
+                <div class="flex text-restyellow space-x-1 mb-4 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-stone-300 text-sm leading-relaxed mb-6">"Super fast online reservation and wonderful cozy ambience. Perfect spot for Friday dinner."</p>
+                <h4 class="text-white font-bold text-sm">David Lee</h4>
+                <span class="text-stone-500 text-xs">Verified Diner</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION + GOOGLE MAPS & CONTACT SECTION -->
+    <section id="contact" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-xs font-black tracking-widest text-restyellow uppercase">Visit Us</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">Location & Contact</h2>
+                <div class="space-y-4 text-stone-300 text-sm">
+                    <p class="flex items-start space-x-4 bg-[#1a1a1a] p-4 rounded border border-white/10">
+                        <i class="fa-solid fa-location-dot text-restyellow text-lg mt-0.5"></i>
+                        <span><strong class="text-white block text-base mb-0.5">Address</strong>452 Michigan Avenue, Chicago, IL 60611, USA</span>
+                    </p>
+                    <p class="flex items-start space-x-4 bg-[#1a1a1a] p-4 rounded border border-white/10">
+                        <i class="fa-solid fa-clock text-restyellow text-lg mt-0.5"></i>
+                        <span><strong class="text-white block text-base mb-0.5">Hours</strong>Monday – Sunday: 11:00 AM – 10:00 PM</span>
+                    </p>
+                    <p class="flex items-start space-x-4 bg-[#1a1a1a] p-4 rounded border border-white/10">
+                        <i class="fa-solid fa-phone text-restyellow text-lg mt-0.5"></i>
+                        <span><strong class="text-white block text-base mb-0.5">Phone</strong>(312) 555-0198</span>
+                    </p>
+                </div>
+            </div>
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl p-4 shadow-2xl">
+                <div class="h-80 bg-[#111111] rounded-xl flex flex-col items-center justify-center text-center p-6 border border-white/10 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-map-location-dot text-restyellow text-5xl mb-3"></i>
+                        <h4 class="text-white font-extrabold text-lg">Urban Bites Restaurant</h4>
+                        <p class="text-stone-400 text-xs mt-1">452 Michigan Avenue, Chicago, IL</p>
+                        <button onclick="showModal('Google Maps Integration', 'Opening interactive directions to 452 Michigan Avenue, Chicago, IL 60611 on Google Maps...')" class="mt-5 bg-restyellow hover:bg-restyellowhover text-black font-black px-6 py-3 rounded text-xs uppercase tracking-wider transition-all shadow">
+                            Open in Google Maps
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 py-12 text-center text-stone-500 text-xs uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto px-6 space-y-2">
+            <p class="text-white font-bold text-sm">Urban Bites Restaurant — Chicago, USA</p>
+            <p>© 2026 Urban Bites. All Rights Reserved. Concept / Demo Project.</p>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-[#161616] border-l border-white/10 flex flex-col shadow-2xl">
+                <div class="p-6 border-b border-white/10 flex items-center justify-between">
+                    <h3 class="text-white font-black text-lg uppercase tracking-wider flex items-center space-x-2">
+                        <i class="fa-solid fa-bag-shopping text-restyellow"></i>
+                        <span>Your Order</span>
+                    </h3>
+                    <button onclick="toggleCart()" class="text-stone-400 hover:text-white p-2"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <p class="text-stone-400 text-center py-12 text-sm">Your cart is currently empty. Add items from the menu!</p>
+                </div>
+                <div class="p-6 border-t border-white/10 bg-[#111111] space-y-4">
+                    <div class="flex justify-between items-center text-sm font-bold text-stone-300">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal" class="text-white text-lg">$0.00</span>
+                    </div>
+                    <button onclick="checkoutOrder()" class="w-full bg-restyellow hover:bg-restyellowhover text-black font-black py-4 rounded uppercase tracking-widest text-xs transition-all shadow">
+                        Proceed to Secure Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION MODAL -->
+    <div id="notificationModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4">
+        <div class="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl">
+            <div class="w-14 h-14 rounded-full bg-restyellow/20 text-restyellow flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="modalTitle" class="text-white font-extrabold text-lg uppercase">Success</h3>
+            <p id="modalMessage" class="text-stone-300 text-xs leading-relaxed"></p>
+            <button onclick="closeNotification()" class="bg-restyellow hover:bg-restyellowhover text-black text-xs font-black px-5 py-3 rounded uppercase tracking-wider w-full shadow">OK</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            showModal("Added to Order", `"${name}" has been added to your online order cart.`);
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const list = document.getElementById('cartItemsList');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.innerText = totalCount;
+
+            if (cart.length === 0) {
+                list.innerHTML = `<p class="text-stone-400 text-center py-12 text-sm">Your cart is currently empty. Add items from the menu!</p>`;
+                subtotalEl.innerText = "$0.00";
+                return;
+            }
+
+            let html = '';
+            let subtotal = 0;
+            cart.forEach((item, index) => {
+                subtotal += item.price * item.qty;
+                html += `
+                    <div class="flex justify-between items-center bg-[#111111] p-4 rounded border border-white/10">
+                        <div>
+                            <h4 class="text-white font-bold text-sm">${item.name}</h4>
+                            <p class="text-restyellow text-xs mt-0.5">$${item.price.toFixed(2)} × ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="changeQty(${index}, -1)" class="w-7 h-7 rounded bg-stone-800 text-stone-300 flex items-center justify-center font-bold hover:bg-stone-700">-</button>
+                            <span class="text-white text-xs font-bold w-4 text-center">${item.qty}</span>
+                            <button onclick="changeQty(${index}, 1)" class="w-7 h-7 rounded bg-stone-800 text-stone-300 flex items-center justify-center font-bold hover:bg-stone-700">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+            list.innerHTML = html;
+            subtotalEl.innerText = "$" + subtotal.toFixed(2);
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                showModal("Cart Empty", "Please add at least one menu item before proceeding to checkout.");
+                return;
+            }
+            toggleCart();
+            showModal("Order Confirmed! 🍔", "Your online food order has been sent successfully to the Urban Bites Chicago kitchen! Estimated pickup/delivery: 30 mins.");
+            cart = [];
+            updateCartUI();
+        }
+
+        function handleReservation(event) {
+            event.preventDefault();
+            const name = document.getElementById('resName').value;
+            const date = document.getElementById('resDate').value;
+            const time = document.getElementById('resTime').value;
+            const guests = document.getElementById('resGuests').value;
+
+            showModal("Reservation Confirmed!", `Thank you, ${name}! Your table for ${guests} on ${date} at ${time} has been successfully reserved.`);
+            document.getElementById('reservationForm').reset();
+        }
+
+        function showModal(title, message) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMessage').innerText = message;
+            document.getElementById('notificationModal').classList.remove('hidden');
+        }
+
+        function closeNotification() {
+            document.getElementById('notificationModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
